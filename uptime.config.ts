@@ -5,10 +5,8 @@
 // Don't edit this line
 import { MaintenanceConfig, PageConfig, WorkerConfig } from './types/config'
 
-const pageConfig: PageConfig = {
-  // Title for your status page
+export const pageConfig: PageConfig = {
   title: "Stavan's Status Page",
-  // Links shown at the header of your status page, could set `highlight` to `true`
   links: [
     { link: 'https://github.com/systaven', label: 'GitHub' },
     { link: 'https://blog.stavmb.me/', label: 'Blog' },
@@ -16,22 +14,14 @@ const pageConfig: PageConfig = {
   ],
 }
 
-const workerConfig: WorkerConfig = {
-  // Define all your monitors here
+export const workerConfig: WorkerConfig = {
   monitors: [
-    // Example HTTP Monitor
     {
-      // `id` should be unique, history will be kept if the `id` remains constant
       id: 'foo_monitor',
-      // `name` is used at status page and callback message
       name: 'Stavmb blog',
-      // `method` should be a valid HTTP Method
       method: 'GET',
-      // `target` is a valid URL
       target: 'https://blog.stavmb.me',
-      // [OPTIONAL] `tooltip` is ONLY used at status page to show a tooltip
       tooltip: 'This is a tooltip for this monitor',
-      // [OPTIONAL] `statusPageLink` is ONLY used for clickable link at status page
       statusPageLink: 'https://blog.stavmb.me',
       expectedCodes: [200],
       timeout: 10000,
@@ -70,20 +60,8 @@ const workerConfig: WorkerConfig = {
         'User-Agent': 'Uptimeflare',
       },
     },
-
-    // Example TCP Monitor (Commented)
-    // {
-    //   id: 'test_tcp_monitor',
-    //   name: 'Example TCP Monitor',
-    //   method: 'TCP_PING',
-    //   target: '1.2.3.4:22',
-    //   tooltip: 'My production server SSH',
-    //   statusPageLink: 'https://example.com',
-    //   timeout: 5000,
-    // },
   ],
 
-  // [Optional] Notification settings
   notification: {
     webhook: {
       url: 'https://api.telegram.org/bot123456:ABCDEF/sendMessage',
@@ -99,20 +77,11 @@ const workerConfig: WorkerConfig = {
   },
 }
 
-// You can define multiple maintenances here
-// During maintenance, an alert will be shown at status page
-// Also, related downtime notifications will be skipped (if any)
-const maintenances: MaintenanceConfig[] = [
-  // {
-  //   id: 'maint_1',
-  //   title: 'Server Upgrade',
-  //   start: '2024-12-10T10:00:00Z',
-  //   end: '2024-12-10T12:00:00Z',
-  //   affectIds: ['foo_monitor', 'openlist_halo_monitor'],
-  // },
+export const maintenances: MaintenanceConfig[] = [
+  // 可选：维护配置
 ]
 
-// Export config
+// ⭐ 最后统一导出（用于未来扩展）
 export default {
   pageConfig,
   workerConfig,
