@@ -24,7 +24,7 @@ const workerConfig: WorkerConfig = {
       // `id` should be unique, history will be kept if the `id` remains constant
       id: 'foo_monitor',
       // `name` is used at status page and callback message
-      name: 'My API Monitor',
+      name: 'Stavmb blog',
       // `method` should be a valid HTTP Method
       method: 'GET',
       // `target` is a valid URL
