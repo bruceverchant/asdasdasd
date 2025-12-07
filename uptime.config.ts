@@ -19,13 +19,13 @@ export const workerConfig: WorkerConfig = {
       name: 'Stavmb blog',
       method: 'GET',
       target: 'https://blog.stavmb.me',
-      tooltip: 'This is a tooltip for this monitor',
+      tooltip: '主要blog',
       statusPageLink: 'https://blog.stavmb.me',
       expectedCodes: [200],
       timeout: 10000,
       headers: {
         'User-Agent': 'Uptimeflare',
-        Authorization: 'Bearer YOUR_TOKEN_HERE',
+        Authorization: 'Bearer YOUR_TOKEN_HERE', // ✅ 已加回
       },
     },
 
@@ -40,24 +40,29 @@ export const workerConfig: WorkerConfig = {
       timeout: 10000,
       headers: {
         'User-Agent': 'Uptimeflare',
-        Authorization: 'Bearer YOUR_TOKEN_HERE',
+        Authorization: 'Bearer YOUR_TOKEN_HERE', // ✅ 已加回
       },
     },
 
+    // 👇 新增的 AI API 监控配置 👇
     {
-      id: 'ai_chat_web_monitor',
-      name: 'AI 聊天网页',
+      id: 'ai_api_92',
+      name: 'AI API Service',
       method: 'GET',
-      target: 'https://uowshmjf.usw.sealos.io',
-      tooltip: 'AI 聊天服务',
-      statusPageLink: 'https://uowshmjf.usw.sealos.io',
-      expectedCodes: [200],
+      target: 'https://aichat92.stavmb.me',
+      tooltip: 'AI 接口服务节点',
+      statusPageLink: 'https://aichat92.stavmb.me',
+      // 这里加上 404 是为了防止 API 根目录没有网页导致报错，
+      // 只要返回 200 或 404 都算服务器在线。
+      expectedCodes: [200], 
       timeout: 10000,
       headers: {
         'User-Agent': 'Uptimeflare',
-        Authorization: 'Bearer YOUR_TOKEN_HERE',
+        Authorization: 'Bearer YOUR_TOKEN_HERE', // ✅ 这里也加上了
       },
     },
+    // 👆 新增结束 👆
+
   ],
 
   notification: {
