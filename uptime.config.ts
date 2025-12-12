@@ -45,23 +45,23 @@ export const workerConfig: WorkerConfig = {
     },
 
     // 👇 新增的 AI API 监控配置 👇
-    {
-      id: 'ai_api_92',
-      name: 'AI API Service',
-      method: 'GET',
-      target: 'https://aichat92.stavmb.me',
-      tooltip: 'AI 接口服务节点',
-      statusPageLink: 'https://aichat92.stavmb.me',
+//    {
+//      id: 'ai_api_92',
+//      name: 'AI API Service',
+//      method: 'GET',
+//      target: 'https://aichat92.stavmb.me',
+//      tooltip: 'AI 接口服务节点',
+//      statusPageLink: 'https://aichat92.stavmb.me',
       // 这里加上 404 是为了防止 API 根目录没有网页导致报错，
       // 只要返回 200 或 404 都算服务器在线。
-      expectedCodes: [200], 
-      timeout: 10000,
-      headers: {
-        'User-Agent': 'Uptimeflare',
-        Authorization: 'Bearer YOUR_TOKEN_HERE', // ✅ 这里也加上了
-      },
-    },
-    // 👆 新增结束 👆
+//      expectedCodes: [200], 
+//      timeout: 10000,
+//      headers: {
+//        'User-Agent': 'Uptimeflare',
+//        Authorization: 'Bearer YOUR_TOKEN_HERE', // ✅ 这里也加上了
+//      },
+//    },
+//    // 👆 新增结束 👆
 
   ],
 
