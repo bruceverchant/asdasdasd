@@ -32,7 +32,7 @@ const pageConfig: PageConfig = {
 
 const workerConfig: WorkerConfig = {
   // [Optional] Write KV at most every N minutes unless the status changed, default to 3
-  kvWriteCooldownMinutes: 3,
+  kvWriteCooldownMinutes: 10,
   // Enable HTTP Basic auth for status page & API by uncommenting the line below, format `<USERNAME>:<PASSWORD>`
   // passwordProtection: 'username:password',
   // Define all your monitors here
