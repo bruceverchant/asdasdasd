@@ -44,6 +44,22 @@ export const workerConfig: WorkerConfig = {
       },
     },
 
+    {
+      id: 'watch_monitor',
+      name: '私人影院',
+      method: 'GET',
+      target: 'https://watch.stavmb.me',
+      tooltip: 'LunaTV',
+      statusPageLink: 'https://watch.stavmb.me',
+      expectedCodes: [200],
+      timeout: 10000,
+      headers: {
+        'User-Agent': 'Uptimeflare',
+        Authorization: 'Bearer YOUR_TOKEN_HERE', // ✅ 已加回
+      },
+    },
+
+    
     // 👇 新增的 AI API 监控配置 👇
 //    {
 //      id: 'ai_api_92',
