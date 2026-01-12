@@ -13,6 +13,7 @@ export const pageConfig: PageConfig = {
 }
 
 export const workerConfig: WorkerConfig = {
+  kvWriteCooldownMinutes: 10,
   monitors: [
     {
       id: 'foo_monitor',
