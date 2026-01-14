@@ -85,12 +85,9 @@ export async function getServerSideProps() {
     return {
       id: monitor.id,
       name: monitor.name,
-      // @ts-ignore
-      tooltip: monitor?.tooltip,
-      // @ts-ignore
-      statusPageLink: monitor?.statusPageLink,
-      // @ts-ignore
-      hideLatencyChart: monitor?.hideLatencyChart,
+      tooltip: monitor.tooltip ?? null,
+      statusPageLink: monitor.statusPageLink ?? null,
+      hideLatencyChart: monitor.hideLatencyChart ?? null,
     }
   })
 

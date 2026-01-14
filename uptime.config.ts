@@ -5,6 +5,7 @@ import { MaintenanceConfig, PageConfig, WorkerConfig } from './types/config'
 // ----------------------
 export const pageConfig: PageConfig = {
   title: "Stavan's Status Page",
+  logo: '/logo.webp',
   links: [
     { link: 'https://github.com/systaven', label: 'GitHub' },
     { link: 'https://blog.stavmb.me/', label: 'Blog' },
